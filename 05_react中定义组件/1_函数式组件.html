@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数式组件定义</title>
+</head>
+<body>
+<div id="test"></div>
+
+<!--    react 核心库-->
+<script src="../js/react.development.js"></script>
+<!--    react dom库-->
+<script src="../js/react-dom.development.js"></script>
+
+<script src="../js/bable.min.js"></script>
+
+
+<script type="text/babel">
+
+    function MyComponenet() {
+        console.log(this) //此处的this是undefined 因为babel在编译之后 会强制开启严格模式 严格模式下 this不指向浏览器的window对象
+        return <h1>我是简单的函数式组件 (适用于简单组件定义)</h1>
+
+    }
+
+    ReactDOM.render(<MyComponenet/>,document.getElementById("test"));
+    // ReactDOM.render(<MyComponenet .....执行后发生了什么
+    // react 执行 解析组件标签，当发现组件是函数申明的 就调用该函数 将返回的虚拟dom 转化为真实dom 渲染到浏览器
+</script>
+</body>
+</html>
