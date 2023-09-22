@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSX小练习</title>
+</head>
+<body>
+    <div id="test">
+
+    </div>
+
+
+    <!--    react 核心库-->
+    <script src="../js/react.development.js"></script>
+    <!--    react dom库-->
+    <script src="../js/react-dom.development.js"></script>
+
+    <script src="../js/bable.min.js"></script>
+<!--
+
+注意区分 js表达式 和js语句
+    // 表达式会产生一个值
+-->
+    <script type="text/babel">
+
+        let javaTechStack = ["java","springboot","spingcloud","eureka","apollo","docker"]
+
+        let javaStackWithJsx = javaTechStack.map((el,index) => <li key={index}>{el}</li>)
+
+        const VDom = <>
+           <h1>
+               Java 技术栈列表
+           </h1>
+            <ul>
+                {javaStackWithJsx}
+            </ul>
+
+        </>
+        console.log(VDom)
+
+        ReactDOM.render(VDom, document.getElementById("test"))
+    </script>
+</body>
+</html>
