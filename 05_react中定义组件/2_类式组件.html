@@ -5,10 +5,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>函数式组件定义</title>
+    <title>类式组件定义</title>
 </head>
 <body>
-
+<div id="test"></div>
 
 <!--    react 核心库-->
 <script src="../js/react.development.js"></script>
@@ -19,9 +19,15 @@
 
 
 <script type="text/babel">
+    class MyComponent extends React.Component {
+        render(){
+            return <h2>我是类式组件</h2>
+        }
+    }
+    ReactDOM.render(<MyComponent/>,document.getElementById("test"))
 
-
-
+    //react解析标签 找到MyComponent 发现mycomponent 是一个类式声明的组件 便会帮你new 出这个component实例对象 并调用实例原型上的的render方法，将render返回的虚拟dom
+    //react将虚拟dom 渲染到浏览器
 </script>
 </body>
 </html>
