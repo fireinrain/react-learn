@@ -26,7 +26,7 @@
     class Weather extends React.Component {
         constructor(props) {
             super(props)
-            this.state = {isHot:false}
+            this.state = {isHot:false,wind: "微风"}
             this.changeWeather = this.changeWeather.bind(this);
         }
 
@@ -41,7 +41,7 @@
         }
         render() {
             const  isHot = this.state.isHot
-            return <h1 onClick={this.changeWeather}>今天天气很{isHot ? '炎热' : '凉爽'}！</h1>
+            return <h1 onClick={this.changeWeather}>今天天气很{isHot ? '炎热' : '凉爽'}！{this.state.wind}</h1>
         }
 
 
